@@ -33,17 +33,16 @@ public class OrientationSetter : MonoBehaviour
                     LoadScene();
                 }
             }
+            yield break;
+        }
+
+        if (Screen.orientation == ScreenOrientation.Portrait)
+        {
+            SetupPortraitOrientation();
         }
         else
         {
-            if (Screen.orientation == ScreenOrientation.Portrait)
-            {
-                SetupPortraitOrientation();
-            }
-            else
-            {
-                SetupLandscapeOrientation();
-            }
+            SetupLandscapeOrientation();
         }
 
         LoadScene();
